@@ -1,25 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import AppBar from "./Components/AppBar";
+import Login from "./Components/Login";
+import Dashboard from "./Components/Dashboard";
 
-function App() {
+export default function App() {
+  const [loggedIn, setLoggedIn] = React.useState(false);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <AppBar />
+      <Login setLoggedIn={setLoggedIn} loggedIn={loggedIn} />
+      <Dashboard />
     </div>
   );
 }
-
-export default App;
